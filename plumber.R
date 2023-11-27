@@ -22,3 +22,6 @@ function() {
 function(a, b) {
   as.numeric(a) + as.numeric(b)
 }
+
+# Import sample model
+model <- readRDS("trained_model.rds")
