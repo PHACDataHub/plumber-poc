@@ -30,8 +30,8 @@ function(req, res){
 }
 
 #* Extract filtered training data
-#* @param my_prcode
-#* @param my_type
+#* @param prcode
+#* @param type
 #* @get /data
 function(prcode, type) {
   asbestos_df %>%
