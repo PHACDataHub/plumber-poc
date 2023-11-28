@@ -6,7 +6,7 @@ library(tidyverse)
 model <- readRDS("trained_model.rds")
 
 # Import data the model was trained on and transform
-asbestos_raw <- read_csv("https://github.com/najsaqib/naj_lab/raw/main/asbestos.csv")
+asbestos_raw <- read_csv("asbestos.csv")
 
 asbestos_df <- asbestos_raw %>%
   select(prcode, type, asbestos) %>%
