@@ -1,5 +1,18 @@
 library(plumber)
 
+#* Health Check - Is the API functioning?
+#* @get /health-check
+status <- function(){
+  list(
+    status = "All good",
+    time = Sys.time()
+  )
+}
+
+# Import sample model
+model <- readr::readRDS("trained_model.rds")
+
+
 #* Echo back the input
 #* @param msg The message to echo
 #* @get /echo
@@ -23,5 +36,4 @@ function(a, b) {
   as.numeric(a) + as.numeric(b)
 }
 
-# Import sample model
-model <- readRDS("trained_model.rds")
+
