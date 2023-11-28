@@ -1,4 +1,10 @@
+# Import libraries
 library(plumber)
+
+# Import sample model
+model <- readRDS("trained_model.rds")
+
+# Set up endpoints
 
 #* Health Check - Is the API functioning?
 #* @get /health-check
@@ -9,31 +15,8 @@ status <- function(){
   )
 }
 
-# Import sample model
-model <- readr::readRDS("trained_model.rds")
-
-
-#* Echo back the input
-#* @param msg The message to echo
-#* @get /echo
-function(msg="") {
-  list(msg = paste0("The message is: '", msg, "'"))
+#* Predict if office has asbestos
+#* @post /predict
+function(req, res){
+  predict(model, new_data = req$body, type = "prob")
 }
-
-#* Plot a histogram
-#* @serializer png
-#* @get /plot
-function() {
-  rand <- rnorm(100)
-  hist(rand)
-}
-
-#* Return the sum of two numbers
-#* @param a The first number to add
-#* @param b The second number to add
-#* @post /sum
-function(a, b) {
-  as.numeric(a) + as.numeric(b)
-}
-
-
