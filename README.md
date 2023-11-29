@@ -1,13 +1,13 @@
 # Proof of Concept for the R Plumber API
 
-Included in this repo is a small application that contains an R Plumber API with three endpoints, which are described briefly below:
+Included in this repo is a small application that contains an R Plumber API with three endpoints. The API is built on top of a classification model using the **National inventory of asbestos in Public Services and Procurement Canada buildings** dataset on the Government of Canada Open Data Portal. The model can provide predictions on whether or not a facility contains asbestos based on the province/territory it is located in and its type of ownership.
 
 
 ## health-check (HTTP GET request)
 If the API is up, this endpoint provides a response containing the message "All good" and system time.
 
 ## predict (HTTP POST request)
-This endpoint expects a list of facilities in JSON format in the body of the request. Each facility is has data for two variables; **prcode** and **type**. 
+This endpoint expects a list of facilities in JSON format in the body of the request. Each facility has data for two variables; **prcode** and **type**. 
 
 **prcode** expects two letter provincial/territorial codes as values (e.g. `AB`, `BC`, `ON`, etc.)
 
