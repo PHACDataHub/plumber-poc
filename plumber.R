@@ -1,6 +1,9 @@
 # Import libraries
-library(plumber)
-library(tidyverse)
+library(dplyr)
+library(readr)
+library(recipes)
+library(workflows)
+library(glmnet)
 
 # Import sample model
 model <- readRDS("trained_model.rds")
