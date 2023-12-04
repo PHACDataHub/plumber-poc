@@ -33,7 +33,7 @@ There is a Dockerfile in the repository that can be utilized to create a Docker 
 
 Based on the image, you can test deploying the container as follows:
     
-> docker run --rm -p 8000:8000 asbestosdocker
+> docker run --rm -p 8000:8080 asbestosdocker
 
 The application is configured to run on port 8000. 
 
