@@ -11,7 +11,7 @@ RUN R -e "install.packages('recipes')"
 COPY / /
 
 # open port 8000 to traffic
-EXPOSE 8000
+EXPOSE 8080
 
 # when the container starts, start the API.R script
 ENTRYPOINT ["Rscript", "API.R"]
