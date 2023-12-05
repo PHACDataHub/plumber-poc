@@ -28,11 +28,11 @@ In response, you should receive all the facilities in the training data set for 
 # Deployment
 
 The application is currently deployed to Google Cloud Run using cloubuild service. The deployment pipeline is automated in the sense that every commit that is pushed to the github repo, triggers a workflow which will:
-1) Build the docker image using Dockerfile avaiable in the repo.
+1) Build the docker image using Dockerfile available in the repo.
 2) Push the docker image to Google Cloud Artifact Repository.
 3) Deploy that image to cloudrun (url:- https://plumberapi-6ef5a33mba-nn.a.run.app)
 
-This workflow is defined using a config cloudbuild.yaml available in the github repo
+This workflow is defined using a config file called "cloudbuild.yaml" available in the github repo
 
 **To build the image on a machine with the Docker engine installed, you can run the following command from the directory where the Dockerfile is located:**
 
